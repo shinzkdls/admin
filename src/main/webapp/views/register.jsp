@@ -13,7 +13,7 @@
             $('#name').keyup(function () {
                 var id = $('#id').val();
                 var pwd = $('#pwd').val();
-                var name = $('#name').val();
+                var name = $('#lev').val();
                 if (id != '' && pwd != '' && name != '') {
                     $('#register_btn').removeClass('disabled');
                 }
@@ -40,7 +40,7 @@
         send: function () {
             var id = $('#id').val();
             var pwd = $('#pwd').val();
-            var name = $('#name').val();
+            var name = $('#lev').val();
             if (id.length <= 3) {
                 $('#check_id').text('4자리 이상이어야 합니다.');
                 $('#id').focus();
@@ -51,7 +51,7 @@
                 return;
             }
             if (name == '') {
-                $('#name').focus();
+                $('#lev').focus();
                 return;
             }
             $("#register_form").attr({

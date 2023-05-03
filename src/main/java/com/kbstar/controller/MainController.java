@@ -32,12 +32,12 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/logout")
+    @RequestMapping("/logoutimpl")
     public String logout(Model model, HttpSession session) {
         if (session != null) {
             session.invalidate();
         }
-        return "index";
+        return "redirect:/";
     }
 
     @RequestMapping("/loginimpl")
@@ -77,8 +77,8 @@ public class MainController {
         }
 
         model.addAttribute("radm", adm);
-        model.addAttribute("center", "registerok");
-        return "index";
+        //model.addAttribute("center", "registerok");
+        return "redirect:/";
     }
 
     @RequestMapping("/charts")
