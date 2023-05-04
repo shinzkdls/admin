@@ -2,6 +2,29 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<script>
+    let item_search = {
+        init: function () {
+            $('#search_btn').click(function () {
+                $('#search_form').attr({
+                    method: 'get',
+                    action: '/item/search'
+                });
+                $('#search_form').submit();
+            });
+            $('#price').on('input', function () {
+                var value = $(this).val();
+                $('#maxprice').text(value);
+            });
+
+        }
+    };
+    $(function () {
+        $('#maxprice').text($('#price').val());
+        item_search.init();
+    });
+</script>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -11,6 +34,31 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Item ALL</h6>
+            <form id="search_form" class="form-inline well">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="name">Name:</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name"
+                               value="${is.name}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="price">Max Price:</label>
+                    <div class="col-sm-6">
+                        <input type="range" class="form-range" id="price" name="price" min="0" max="999999"
+                               value="${is.price}">
+                    </div>
+                    <div class="col-sm-4">
+                        <span id="maxprice"></span>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <button id="search_btn" type="button" class="btn btn-info">Search</button>
+                    </div>
+                </div>
+            </form>
         </div>
         <div class="card-body">
             <div class="table-responsive">
