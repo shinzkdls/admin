@@ -4,23 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5e0ecc5-7972-4a2d-8eca-28a4e3d374d0" name="Changes" comment="admin commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/AjaxImplController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/CustController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/cust/add.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/cust/all.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/cust/detail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/error/error_page1.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/item/add.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/item/all.jsp" afterDir="false" />
+    <list default="true" id="a5e0ecc5-7972-4a2d-8eca-28a4e3d374d0" name="Changes" comment="admin 0503 commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/MarkerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/dto/MarkerSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/util/FileUploadUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/item/detail.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/marker/add.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/marker/all.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/marker/detail.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/kbstar/marker/searchTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kbstar/dto/Cust.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/dto/Cust.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kbstar/dto/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/dto/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kbstar/dto/Marker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/dto/Marker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kbstar/mapper/MarkerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/mapper/MarkerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kbstar/service/MarkerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/service/MarkerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/markermapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/markermapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/tables.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/tables.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/item/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/item/add.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +72,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/spring/admin/src/main/webapp/views/cust",
+    "last_opened_file_path": "C:/spring/admin/src/main/webapp/views",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -80,22 +82,23 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "project.propCompiler",
+    "settings.editor.selected.configurable": "actions.on.save",
     "spring.configuration.checksum": "21232f297a57a5a743894a0e4a801fc3",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\spring\admin\src\main\webapp\views\cust" />
       <recent name="C:\spring\admin\src\main\webapp\views" />
+      <recent name="C:\spring\admin\src\main\webapp\views\item" />
+      <recent name="C:\spring\admin\src\main\java\com\kbstar\util" />
+      <recent name="C:\spring\admin\src\main\webapp\views\cust" />
       <recent name="C:\spring\admin\src\main\resources\static\js" />
-      <recent name="C:\spring\admin\src\main\resources\static\img" />
-      <recent name="C:\spring\admin\src\test\java\com\kbstar" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.kbstar.controller" />
+      <recent name="com.kbstar.marker" />
       <recent name="com.kbstar.dto" />
+      <recent name="com.kbstar.controller" />
       <recent name="com.kbstar" />
     </key>
   </component>
@@ -132,6 +135,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.kbstar.adm" />
       <option name="MAIN_CLASS_NAME" value="com.kbstar.adm.SelectTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="searchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kbstar.marker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.kbstar.marker" />
+      <option name="MAIN_CLASS_NAME" value="com.kbstar.marker.searchTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -222,6 +240,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.searchTest" />
         <item itemvalue="JUnit.SelectTest" />
         <item itemvalue="JUnit.LombokTest" />
       </list>
@@ -253,7 +272,8 @@
       <workItem from="1682553995539" duration="1700000" />
       <workItem from="1682995125864" duration="8448000" />
       <workItem from="1683013560113" duration="1574000" />
-      <workItem from="1683070991857" duration="18513000" />
+      <workItem from="1683070991857" duration="18988000" />
+      <workItem from="1683157510919" duration="22095000" />
     </task>
     <task id="LOCAL-00001" summary="ws0420">
       <created>1681977226856</created>
@@ -283,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683014299822</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="admin 0503 commit">
+      <created>1683103130748</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683103130748</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +323,8 @@
     <MESSAGE value="ws0420" />
     <MESSAGE value="clone0420" />
     <MESSAGE value="admin commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin commit" />
+    <MESSAGE value="admin 0503 commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin 0503 commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

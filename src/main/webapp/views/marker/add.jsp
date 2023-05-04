@@ -3,16 +3,16 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <script>
-    let item_add = {
+    let marker_add = {
         init: function () {
             $('#register_btn').click(function () {
-                item_add.send();
+                marker_add.send();
             });
         },
         send: function () {
             $('#register_form').attr({
                 method: 'post',
-                action: '/item/addimpl',
+                action: '/marker/addimpl',
                 enctype: 'multipart/form-data'
             });
             $('#register_form').submit();
@@ -20,19 +20,19 @@
     };
 
     $(function () {
-        item_add.init();
+        marker_add.init();
     });
 </script>
 
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Item Add</h1>
+    <h1 class="h3 mb-2 text-gray-800">Marker Add</h1>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Item Add</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Marker Add</h6>
         </div>
         <div class="card-body">
             <div id="container">
@@ -40,14 +40,23 @@
                     <div class="container">
                         <hr>
 
-                        <label for="name"><b>Name</b></label>
-                        <input type="text" placeholder="Enter Name" name="name" id="name" required>
+                        <label for="title"><b>Title</b></label>
+                        <input type="text" placeholder="Enter Title" name="title" id="title" required>
 
-                        <label for="price"><b>Price</b></label>
-                        <input type="number" placeholder="Enter Price" name="price" id="price" required>
+                        <label for="target"><b>Target</b></label>
+                        <input type="text" placeholder="Enter Target" name="target" id="target" required>
 
-                        <label for="img"><b>Image</b></label>
-                        <input type="file" placeholder="Input Image" name="img" id="img" required>
+                        <label for="lat"><b>LAT</b></label>
+                        <input type="text" placeholder="Enter LAT" name="lat" id="lat" required>
+
+                        <label for="lng"><b>LNG</b></label>
+                        <input type="text" placeholder="Enter LNG" name="lng" id="lng" required>
+
+                        <label for="loc"><b>Loc</b></label>
+                        <input type="text" placeholder="Enter Loc" name="loc" id="loc" required>
+
+                        <label for="imgfile"><b>Image</b></label>
+                        <input type="file" placeholder="Input Image" name="imgfile" id="imgfile" required>
 
                         <hr>
 
