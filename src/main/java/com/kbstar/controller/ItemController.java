@@ -81,11 +81,11 @@ public class ItemController {
     }
 
     @RequestMapping("/search")
-    public String search(Model model, ItemSearch is) throws Exception {
+    public String search(Model model, ItemSearch ms) throws Exception {
         List<Item> list = null;
-        list = itemService.search(is);
+        list = itemService.search(ms);
         model.addAttribute("ilist", list);
-        model.addAttribute("is", is);
+        model.addAttribute("ms", ms);
         model.addAttribute("center", dir + "all");
         return "index";
     }

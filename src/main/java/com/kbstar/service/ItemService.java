@@ -49,8 +49,8 @@ public class ItemService implements KBService<Integer, Item> {
         return mapper.selectall();
     }
 
-    public List<Item> search(ItemSearch is) throws Exception {
-        return mapper.search(is);
+    public List<Item> search(ItemSearch ms) throws Exception {
+        return mapper.search(ms);
     }
 
 }

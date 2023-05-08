@@ -7,9 +7,8 @@ import lombok.*;
 @Setter
 @Getter
 @ToString
-public class ItemSearch {
+public class ItemSearch_2 {
     private String name;
-    private Integer price;
-    private String startdate;
-    private String enddate;
+    private int price;
+
 }

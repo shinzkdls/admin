@@ -3,17 +3,58 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <script>
+    let marker_detail_map = {
+        map: null,
+        init: function () {
+            var mapContainer = document.querySelector('#map');
+            var mapOption = {
+                center: new kakao.maps.LatLng(${gmarker.lat}, ${gmarker.lng}), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+            map = new kakao.maps.Map(mapContainer, mapOption);
+
+            var mapTypeControl = new kakao.maps.MapTypeControl();
+            map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+            var zoomControl = new kakao.maps.ZoomControl();
+            map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+            var markerPosition = new kakao.maps.LatLng(${gmarker.lat}, ${gmarker.lng});
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+            marker.setMap(map);
+
+            var iwContent = '<img src="/uimg/${gmarker.img}" style="width:100px; height:100px;">Hello World!</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+
+            var infowindow = new kakao.maps.InfoWindow({
+                content: iwContent
+            });
+
+            kakao.maps.event.addListener(marker, 'mouseover', function () {
+                infowindow.open(map, marker);
+            });
+
+            kakao.maps.event.addListener(marker, 'mouseout', function () {
+                infowindow.close();
+            });
+            kakao.maps.event.addListener(marker, 'click', function () {
+                location.href = '${gmarker.target}';
+            });
+        }
+    };
+
+
     let marker_detail = {
         init: function () {
-            $('#register_btn').click(function () {
+            $('#update_btn').click(function () {
                 marker_detail.send();
             });
             $('#delete_btn').click(function () {
-                var c = confirm("정말로 삭제 하시겠습니까?");
+                let c = confirm("정말 삭제하시겠습니까?");
                 if (c == true) {
-                    location.href = "/marker/deleteimpl/?id=${gmarker.id}";
+                    location.href = "/marker/deleteimpl?id=${gmarker.id}";
                 }
-            });
+            })
         },
         send: function () {
             $('#register_form').attr({
@@ -24,12 +65,11 @@
             $('#register_form').submit();
         }
     };
-
     $(function () {
         marker_detail.init();
+        marker_detail_map.init();
     });
 </script>
-
 <div class="container-fluid">
 
     <!-- Page Heading -->
@@ -76,6 +116,13 @@
                         <button id="delete_btn" type="button" class="deletebtn">Delete</button>
                     </div>
                 </form>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-10" id="map">
+
+                        </div>
+                    </div>
+                </div>
             </div><!-- /.container-fluid -->
         </div>
     </div>
@@ -141,4 +188,9 @@
         opacity: 1;
     }
 
+    #map {
+        width: 400px;
+        height: 400px;
+        border: 2px solid red;
+    }
 </style>

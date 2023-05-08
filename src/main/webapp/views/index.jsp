@@ -28,6 +28,9 @@
 
     <script src="/js/index0421.js"></script>
 
+    <script type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d63e25a893507f610fac15ac30f6cab5"></script>
+
     <!-- jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
@@ -43,6 +46,9 @@
     <script src="https://code.highcharts.com/modules/cylinder.js"></script>
     <script src="https://code.highcharts.com/modules/funnel3d.js"></script>
     <script src="https://code.highcharts.com/modules/pyramid3d.js"></script>
+
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
 
 </head>
 
@@ -179,6 +185,14 @@
                 <i class=" fas fa-fw fa-chart-area"></i>
                 <span>Live Chart</span></a>
         </li>
+
+        <c:if test="${loginadm != null}">
+            <li class="nav-item">
+                <a class="nav-link" href="/websocket">
+                    <i class=" fas fa-fw fa-chart-area"></i>
+                    <span>websocket</span></a>
+            </li>
+        </c:if>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">

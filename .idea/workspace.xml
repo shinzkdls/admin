@@ -5,13 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5e0ecc5-7972-4a2d-8eca-28a4e3d374d0" name="Changes" comment="admin 0504 commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/dto/ItemSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/StomWebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/MsgController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/dto/ItemSearch_2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/dto/Msg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/item/all_2.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/websocket.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/kbstar/item/SearchTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kbstar/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kbstar/dto/ItemSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/dto/ItemSearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kbstar/mapper/ItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/mapper/ItemMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kbstar/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/service/ItemService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/itemmapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/itemmapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/item/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/item/all.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/marker/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/marker/detail.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +40,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,7 +73,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/spring/clone0504",
+    "last_opened_file_path": "C:/spring/admin/src/main/java/com/kbstar/controller",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,14 +90,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\spring\admin\src\main\java\com\kbstar\controller" />
       <recent name="C:\spring\admin\src\main\webapp\views" />
       <recent name="C:\spring\admin\src\main\webapp\views\item" />
       <recent name="C:\spring\admin\src\main\java\com\kbstar\util" />
       <recent name="C:\spring\admin\src\main\webapp\views\cust" />
-      <recent name="C:\spring\admin\src\main\resources\static\js" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.kbstar.dto" />
+      <recent name="com.kbstar.item" />
       <recent name="com.kbstar.marker" />
       <recent name="com.kbstar.controller" />
       <recent name="com.kbstar" />
@@ -109,6 +122,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.kbstar" />
       <option name="MAIN_CLASS_NAME" value="com.kbstar.LombokTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kbstar.item.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.kbstar.item" />
+      <option name="MAIN_CLASS_NAME" value="com.kbstar.item.SearchTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -229,6 +257,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SearchTests" />
         <item itemvalue="JUnit.searchTest" />
         <item itemvalue="JUnit.SelectTest" />
         <item itemvalue="JUnit.LombokTest" />
@@ -262,7 +291,8 @@
       <workItem from="1682995125864" duration="8448000" />
       <workItem from="1683013560113" duration="1574000" />
       <workItem from="1683070991857" duration="18988000" />
-      <workItem from="1683157510919" duration="24957000" />
+      <workItem from="1683157510919" duration="25664000" />
+      <workItem from="1683504074237" duration="19227000" />
     </task>
     <task id="LOCAL-00001" summary="ws0420">
       <created>1681977226856</created>
@@ -306,11 +336,29 @@
       <option name="project" value="LOCAL" />
       <updated>1683185930120</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="admin 0504 commit">
+      <created>1683188774563</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683188774563</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.security:spring-security-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-websocket" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.validation:jakarta.validation-api" />
+    <option featureType="dependencySupport" implementationName="java:org.hibernate.validator:hibernate-validator" />
+    <option featureType="dependencySupport" implementationName="maven-packaging:war" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-messaging" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>

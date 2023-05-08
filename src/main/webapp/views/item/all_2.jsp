@@ -3,26 +3,26 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <script>
-    // let item_search = {
-    //     init: function () {
-    //         $('#search_btn').click(function () {
-    //             $('#search_form').attr({
-    //                 method: 'get',
-    //                 action: '/item/search'
-    //             });
-    //             $('#search_form').submit();
-    //         });
-    //         $('#price').on('input', function () {
-    //             var value = $(this).val();
-    //             $('#maxprice').text(value);
-    //         });
-    //
-    //     }
-    // };
-    // $(function () {
-    //     $('#maxprice').text($('#price').val());
-    //     item_search.init();
-    // });
+    let item_search = {
+        init: function () {
+            $('#search_btn').click(function () {
+                $('#search_form').attr({
+                    method: 'get',
+                    action: '/item/search'
+                });
+                $('#search_form').submit();
+            });
+            $('#price').on('input', function () {
+                var value = $(this).val();
+                $('#maxprice').text(value);
+            });
+
+        }
+    };
+    $(function () {
+        $('#maxprice').text($('#price').val());
+        item_search.init();
+    });
 </script>
 
 <!-- Begin Page Content -->
@@ -34,44 +34,28 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Item ALL</h6>
-            <form action="/item/search" method="get" id="search_form" class="form-inline well">
-
+            <form id="search_form" class="form-inline well">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="name">Name:</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-6">
                         <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name"
-                               value="${ms.name}"
-                        >
+                               value="${is.name}">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="price">Price:</label>
-                    <div class="col-sm-10">
-                        <input type="number" name="price" class="form-control" id="price" placeholder="Enter Price"
-                               value="${ms.price}"
-                        >
+                    <label class="control-label col-sm-2" for="price">Max Price:</label>
+                    <div class="col-sm-6">
+                        <input type="range" class="form-range" id="price" name="price" min="0" max="999999"
+                               value="${is.price}">
                     </div>
+                    <div class="col-sm-4">
+                        <span id="maxprice"></span>
+                    </div>
+
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="startdate">Start Date:</label>
-                    <div class="col-sm-10">
-                        <input type="date" name="startdate" class="form-control" id="startdate"
-                               placeholder="Enter title"
-                               value="${ms.startdate}"
-                        >
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="enddate">End Date:</label>
-                    <div class="col-sm-10">
-                        <input type="date" name="enddate" class="form-control" id="enddate" placeholder="Enter title"
-                               value="${ms.enddate}"
-                        >
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-2">
-                        <button id="search_btn" type="submit" class="btn btn-info">Search</button>
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <button id="search_btn" type="button" class="btn btn-info">Search</button>
                     </div>
                 </div>
             </form>
