@@ -23,7 +23,20 @@
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Earnings (Monthly)
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div id="content1_msg" class="h5 mb-0 mr-3 font-weight-bold text-primary">
+                                        50
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress progress-sm mr-2">
+                                        <div id="content1_bar" class="progress-bar bg-primary" role="progressbar"
+                                             style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                             aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -42,7 +55,20 @@
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Earnings (Annual)
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div id="content2_msg" class="h5 mb-0 mr-3 font-weight-bold text-success">
+                                        500
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress progress-sm mr-2">
+                                        <div id="content2_bar" class="progress-bar bg-success" role="progressbar"
+                                             style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                             aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -62,11 +88,11 @@
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                    <div id="content3_msg" class="h5 mb-0 mr-3 font-weight-bold text-info">250</div>
                                 </div>
                                 <div class="col">
                                     <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar"
+                                        <div id="content3_bar" class="progress-bar bg-info" role="progressbar"
                                              style="width: 50%" aria-valuenow="50" aria-valuemin="0"
                                              aria-valuemax="100"></div>
                                     </div>
@@ -90,7 +116,18 @@
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                 Pending Requests
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div id="content4_msg" class="h5 mb-0 mr-3 font-weight-bold text-warning">5</div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress progress-sm mr-2">
+                                        <div id="content4_bar" class="progress-bar bg-warning" role="progressbar"
+                                             style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                             aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -130,7 +167,7 @@
                 <!-- Card Body -->
                 <div class="card-body">
                     <div class="chart-area">
-                        <div id="myBubbleChart" style="width: 100%; height: 100%"></div>
+                        <div id="averageSalesChart" style="width: 100%; height: 100%"></div>
                     </div>
                 </div>
             </div>
@@ -336,13 +373,46 @@
 <!-- /.container-fluid -->
 
 <script>
+    let websocket_center = {
+        stompClient: null,
+        init: function () {
+            this.connect();
+        },
+        connect: function () {
+            var sid = this.id;
+            var socket = new SockJS('${adminserver}/wss');
+            this.stompClient = Stomp.over(socket);
+
+            this.stompClient.connect({}, function (frame) {
+                console.log('Connected: ' + frame);
+                this.subscribe('/sendadm', function (msg) {
+                    $('#content1_msg').text(JSON.parse(msg.body).content1);
+                    $('#content1_bar').css("width", (JSON.parse(msg.body).content1) + '%');
+                    $('#content1_bar').attr("aria-valuenow", (JSON.parse(msg.body).content1));
+
+                    $('#content2_msg').text(JSON.parse(msg.body).content2);
+                    $('#content2_bar').css("width", (JSON.parse(msg.body).content2) / 10 + '%');
+                    $('#content2_bar').attr("aria-valuenow", (JSON.parse(msg.body).content2) / 10);
+
+                    $('#content3_msg').text(JSON.parse(msg.body).content3);
+                    $('#content3_bar').css("width", (JSON.parse(msg.body).content3) / 5 + '%');
+                    $('#content3_bar').attr("aria-valuenow", (JSON.parse(msg.body).content3) / 5);
+
+                    $('#content4_msg').text(JSON.parse(msg.body).content4);
+                    $('#content4_bar').css("width", (JSON.parse(msg.body).content4) * 10 + '%');
+                    $('#content4_bar').attr("aria-valuenow", (JSON.parse(msg.body).content4) * 10);
+                });
+            });
+        }
+    };
+
     let charts = {
         init: function () {
-            this.getdata();
+            this.getdatasales();
         },
-        getdata: function () {
+        getdatasales: function () {
             $.ajax({
-                url: '/chart0303',
+                url: '/getdatasales',
                 success: function (result) {
                     console.log(result);
                     charts.display(result);
@@ -350,69 +420,48 @@
             });
         },
         display: function (result) {
-            Highcharts.chart('myBubbleChart', {
+            Highcharts.chart('averageSalesChart', {
                 chart: {
-                    type: 'packedbubble',
-                    height: '40%'
+                    type: 'line'
                 },
                 title: {
-                    text: 'Carbon emissions around the world (2014)',
-                    align: 'left'
+                    text: 'Monthly Average Sales'
                 },
-                tooltip: {
-                    useHTML: true,
-                    pointFormat: '<b>{point.name}:</b> {point.value}m CO<sub>2</sub>'
+                subtitle: {
+                    text: 'Source: ' +
+                        '<a href="https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature" ' +
+                        'target="_blank">Wikipedia.com</a>'
+                },
+                xAxis: {
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Average Sales'
+                    }
                 },
                 plotOptions: {
-                    packedbubble: {
-                        minSize: '30%',
-                        maxSize: '120%',
-                        zMin: 0,
-                        zMax: 1000,
-                        layoutAlgorithm: {
-                            splitSeries: false,
-                            gravitationalConstant: 0.02
-                        },
+                    line: {
                         dataLabels: {
-                            enabled: true,
-                            format: '{point.name}',
-                            filter: {
-                                property: 'y',
-                                operator: '>',
-                                value: 250
-                            },
-                            style: {
-                                color: 'black',
-                                textOutline: 'none',
-                                fontWeight: 'normal'
-                            }
-                        }
+                            enabled: true
+                        },
+                        enableMouseTracking: false
                     }
                 },
                 series: [{
-                    name: 'Europe',
-                    data: result
+                    name: 'Male',
+                    data: result.Male
                 }, {
-                    name: 'Africa',
-                    data: result
-                }, {
-                    name: 'Oceania',
-                    data: result
-                }, {
-                    name: 'North America',
-                    data: result
-                }, {
-                    name: 'South America',
-                    data: result
-                }, {
-                    name: 'Asia',
-                    data: result
+                    name: 'Female',
+                    data: result.Female
                 }]
             });
 
         }
     };
+
     $(function () {
         charts.init();
+        websocket_center.init();
     })
 </script>

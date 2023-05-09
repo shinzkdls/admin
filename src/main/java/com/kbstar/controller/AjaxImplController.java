@@ -2,8 +2,11 @@ package com.kbstar.controller;
 
 import com.kbstar.dto.Cust;
 import com.kbstar.dto.Marker;
+import com.kbstar.dto.Sales;
 import com.kbstar.service.CustService;
 import com.kbstar.service.MarkerService;
+import com.kbstar.service.SalesService;
+import lombok.extern.slf4j.Slf4j;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+@Slf4j
 @RestController
 public class AjaxImplController {
 
@@ -22,6 +26,8 @@ public class AjaxImplController {
     MarkerService markerService;
     @Autowired
     CustService custService;
+    @Autowired
+    SalesService salesService;
 
     @RequestMapping("/getservertime")
     public Object getservertime() {
@@ -64,6 +70,27 @@ public class AjaxImplController {
             ja.add(jo);
         }
         return ja;
+    }
+
+    @RequestMapping("/getdatasales")
+    public Object getdatasales() throws Exception {
+        List<Sales> list = null;
+        list = salesService.getdatasales();
+        JSONArray jaM = new JSONArray();
+        JSONArray jaF = new JSONArray();
+        for (Sales obj : list) {
+            if (obj.getGender().equals("M")) {
+                jaM.add(obj.getPrice());
+            } else {
+                jaF.add(obj.getPrice());
+            }
+        }
+        JSONObject jo = new JSONObject();
+        jo.put("Male", jaM);
+        jo.put("Female", jaF);
+//        log.info(jaM.toJSONString());
+//        log.info(jaF.toJSONString());
+        return jo;
     }
 
     @RequestMapping("/markers")

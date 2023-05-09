@@ -8,6 +8,16 @@
         SELECT *
         FROM sales
     </select>
+
+    <select id="getdatasales" resultType="sales">
+        SELECT SUBSTR(TO_CHAR(RDATE, 'YYYYMMDD'), 1, 6) AS RDATE
+             , SUM(PRICE)                               AS PRICE
+             , GENDER
+        FROM SALES
+        GROUP BY SUBSTR(TO_CHAR(RDATE, 'YYYYMMDD'), 1, 6), GENDER
+        ORDER BY RDATE, GENDER
+    </select>
+
     <insert id="insert" parameterType="sales">
         INSERT INTO sales
         VALUES (TO_DATE(#{rdate}, 'YYYY-MM-DD'), #{price}, #{gender})

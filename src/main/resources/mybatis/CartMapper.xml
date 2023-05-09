@@ -56,6 +56,13 @@
         WHERE C.CUST_ID = CU.ID
           AND C.ITEM_ID = I.ID
     </select>
+    <select id="sumcart" resultType="Integer">
+        SELECT SUM(C.CNT * I.PRICE) AS SUM
+        FROM CART C, CUST CU, ITEM I
+        WHERE C.CUST_ID = CU.ID
+          AND C.ITEM_ID = I.ID
+    </select>
+
     <insert id="insert" parameterType="cart">
         INSERT INTO CART
         VALUES (cart_seq.NEXTVAL, #{cust_id}, #{item_id}, #{cnt}, SYSDATE)
