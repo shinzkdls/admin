@@ -1,8 +1,10 @@
 package com.kbstar.controller;
 
+import com.kbstar.dto.Chart;
 import com.kbstar.dto.Cust;
 import com.kbstar.dto.Marker;
 import com.kbstar.dto.Sales;
+import com.kbstar.service.ChartService;
 import com.kbstar.service.CustService;
 import com.kbstar.service.MarkerService;
 import com.kbstar.service.SalesService;
@@ -28,6 +30,8 @@ public class AjaxImplController {
     CustService custService;
     @Autowired
     SalesService salesService;
+    @Autowired
+    ChartService chartService;
 
     @RequestMapping("/getservertime")
     public Object getservertime() {
@@ -116,5 +120,30 @@ public class AjaxImplController {
         }
         return ja;
     }
+
+    @RequestMapping("/chart1")
+    public Object chart1() throws Exception {
+        List<Chart> list = chartService.getMonthlyTotal();
+        JSONArray fma = new JSONArray();
+        JSONArray ma = new JSONArray();
+        for (Chart c : list) {
+            if (c.getGender().toUpperCase().equals("F")) {
+                fma.add(c.getTotal());
+            } else {
+                ma.add(c.getTotal());
+            }
+        }
+        JSONObject fmo = new JSONObject();
+        JSONObject mo = new JSONObject();
+        fmo.put("name", "Female");
+        fmo.put("data", fma);
+        mo.put("name", "Male");
+        mo.put("data", ma);
+        JSONArray data = new JSONArray();
+        data.add(fmo);
+        data.add(mo);
+        return data;
+    }
+
 
 }
