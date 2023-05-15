@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5e0ecc5-7972-4a2d-8eca-28a4e3d374d0" name="Changes" comment="admin 0504 commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/dto/Chart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/mapper/ChartMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/service/ChartService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/chartMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/center_before.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/kbstar/chart/MonthlyTotalTest.java" afterDir="false" />
+    <list default="true" id="a5e0ecc5-7972-4a2d-8eca-28a4e3d374d0" name="Changes" comment="admin 0510 commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/ChatbotController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/util/ChatbotUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/callcenter.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/kbstar/ncp/ChatbotTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/AjaxImplController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/AjaxImplController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/center.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/center.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kbstar/StomWebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/StomWebSocketConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kbstar/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +62,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/spring/admin/src/main/resources/mybatis",
+    "last_opened_file_path": "C:/spring/six_admin",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,16 +72,16 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "actions.on.save",
+    "settings.editor.selected.configurable": "editor.preferences.import",
     "spring.configuration.checksum": "21232f297a57a5a743894a0e4a801fc3",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\spring\admin\src\main\webapp\views" />
       <recent name="C:\spring\admin\src\main\resources\mybatis" />
       <recent name="C:\spring\admin\src\main\java\com\kbstar\controller" />
-      <recent name="C:\spring\admin\src\main\webapp\views" />
       <recent name="C:\spring\admin\src\main\webapp\views\item" />
       <recent name="C:\spring\admin\src\main\java\com\kbstar\util" />
     </key>
@@ -90,11 +89,11 @@
       <recent name="C:\spring\admin\src\main\webapp\views" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.kbstar.ncp" />
+      <recent name="com.kbstar.controller" />
       <recent name="com.kbstar.chart" />
       <recent name="com.kbstar.service" />
       <recent name="com.kbstar.mapper" />
-      <recent name="com.kbstar.dto" />
-      <recent name="com.kbstar.item" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -104,7 +103,22 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MonthlyTotalTest">
+  <component name="RunManager" selected="Spring Boot.AdminApplication">
+    <configuration name="ChatbotTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kbstar.ncp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.kbstar.ncp" />
+      <option name="MAIN_CLASS_NAME" value="com.kbstar.ncp.ChatbotTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MonthlyTotalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="admin" />
       <extension name="coverage">
@@ -146,21 +160,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.kbstar.item" />
       <option name="MAIN_CLASS_NAME" value="com.kbstar.item.SearchTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SelectTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="admin" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.kbstar.adm.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.kbstar.adm" />
-      <option name="MAIN_CLASS_NAME" value="com.kbstar.adm.SelectTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -266,11 +265,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ChatbotTest" />
         <item itemvalue="JUnit.MonthlyTotalTest" />
         <item itemvalue="JUnit.MonthlyTotalTest.contextLoads" />
         <item itemvalue="JUnit.SearchTests" />
         <item itemvalue="JUnit.searchTest" />
-        <item itemvalue="JUnit.SelectTest" />
       </list>
     </recent_temporary>
   </component>
@@ -304,7 +303,10 @@
       <workItem from="1683157510919" duration="25664000" />
       <workItem from="1683504074237" duration="19227000" />
       <workItem from="1683589170803" duration="26254000" />
-      <workItem from="1683675371230" duration="13034000" />
+      <workItem from="1683675371230" duration="13668000" />
+      <workItem from="1683786442373" duration="4101000" />
+      <workItem from="1683870931191" duration="1340000" />
+      <workItem from="1684112130942" duration="12855000" />
     </task>
     <task id="LOCAL-00001" summary="ws0420">
       <created>1681977226856</created>
@@ -362,7 +364,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683619466315</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="admin 0510 commit">
+      <created>1683704306939</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683704306939</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,7 +397,8 @@
     <MESSAGE value="admin commit" />
     <MESSAGE value="admin 0503 commit" />
     <MESSAGE value="admin 0504 commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin 0504 commit" />
+    <MESSAGE value="admin 0510 commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin 0510 commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

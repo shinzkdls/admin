@@ -54,7 +54,7 @@ public class MainController {
             adm = admService.get(id);
             if (adm != null && encoder.matches(pwd, adm.getPwd())) {
                 nextPage = "loginok";
-                session.setMaxInactiveInterval(100000);
+                session.setMaxInactiveInterval(1000000);
                 session.setAttribute("loginadm", adm);
             }
         } catch (Exception e) {
@@ -109,6 +109,13 @@ public class MainController {
     public String websocket(Model model) {
         model.addAttribute("adminserver", adminServer);
         model.addAttribute("center", "websocket");
+        return "index";
+    }
+
+    @RequestMapping("/callcenter")
+    public String callcenter(Model model) {
+        model.addAttribute("adminserver", adminServer);
+        model.addAttribute("center", "callcenter");
         return "index";
     }
 
